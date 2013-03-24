@@ -7,8 +7,9 @@ var autoregister = require('git-autoregister-odb')
   , to_js = require('git-to-js')
   , ls = require('ls-stream')
   , odb = require('git-odb')
+  , fs = require('fs')
 
-function repository(fs, dir, ready) {
+function repository(dir, ready) {
   var db = odb()
 
   autoregister(
@@ -42,14 +43,19 @@ function repository(fs, dir, ready) {
 }
 
 function Repository(odb, refs) {
-  this._odb = odb
-  this._refs = refs
+  var self = this
+  self._odb = odb
+  self._refs = refs
+
+  self.find = function(oid, ready) {
+    return self._find(oid, ready)
+  }
 }
 
 var cons = Repository
   , proto = cons.prototype
 
-proto.find = function(oid, ready) {
+proto._find = function(oid, ready) {
   this.raw(oid, function(err, data) {
     if(err) {
       return ready(err)

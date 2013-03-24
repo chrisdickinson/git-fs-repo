@@ -28,5 +28,10 @@
     "git-load-refs": "0.0.3",
     "git-odb-pack": "0.0.6",
     "through": "~2.2.7"
+  },
+  "devDependencies": {
+    "git-parse-human": "0.0.1",
+    "git-walk-tree": "0.0.1",
+    "git-walk-refs": "0.0.1"
   }
 }
