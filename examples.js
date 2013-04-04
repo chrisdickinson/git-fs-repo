@@ -34,8 +34,8 @@ repo(dir, function(err, git) {
       .on('data', function(object) {
         console.log(object.stack.map(function(x) { return x.name }).join('/'))
       })
-      .on('end', function() { console.log('ended')
-        global.__ended = true  
+      .on('end', function() {
+        console.log('ended')
       })
   })
 
