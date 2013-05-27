@@ -1,6 +1,6 @@
 {
   "name": "git-fs-repo",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "filesystem backed git repository",
   "main": "index.js",
   "scripts": {
