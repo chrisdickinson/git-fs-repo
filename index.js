@@ -72,9 +72,9 @@ proto.ref = function(name, follow) {
 
   for(var i = 0, len = refs.length; i < len; ++i) {
     if(refs[i].name === name) {
-      return follow && refs[i].symbolic ? 
+      return follow && refs[i].symbolic ?
         this.ref(refs[i].ref, true) :
-        refs[i] 
+        refs[i]
     }
   }
   return null
@@ -95,12 +95,12 @@ proto.refs = function(follow) {
     seen = []
     tmp = []
     for(var i = 0, len = out.length; i < len; ++i) {
-      if(seen.indexOf(out[i].hash) > -1) { 
+      if(seen.indexOf(out[i].hash) > -1) {
         continue
       }
       seen[seen.length] = out[i].hash
       tmp[tmp.length] = out[i]
-    }    
+    }
     out = tmp
   }
 
@@ -116,7 +116,7 @@ proto.raw = function(oid, ready) {
 function oidify(oid) {
   if(typeof oid === 'string') {
     var buf = new Buffer(20)
-    buf.write(oid, 0, 20, 'hex')
+    buf.write(oid.slice(0, 40), 0, 20, 'hex')
     oid = buf
   }
   return oid
