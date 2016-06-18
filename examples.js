@@ -18,8 +18,9 @@ repo(dir, function(err, git) {
   var last = Infinity
   spider(git.find, hashes)
     .on('data', function(x) {
-      var t = human(x.author()).time
-      console.log(x.hash, x.band, x.author(), JSON.stringify(x.message()))
+      var author = x.author ? x.author() : x.tagger()
+      var t = human(author).time
+      console.log(x.hash, x.band, author, JSON.stringify(x.message()))
       last = t
     })
 

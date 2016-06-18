@@ -20,18 +20,18 @@
   "author": "Chris Dickinson <chris@neversaw.us>",
   "license": "MIT",
   "dependencies": {
-    "git-autoregister-odb": "0.0.2",
-    "git-odb": "0.0.2",
-    "git-to-js": "0.0.3",
-    "git-odb-loose": "0.0.5",
-    "ls-stream": "0.0.4",
-    "git-load-refs": "0.0.4",
-    "git-odb-pack": "0.0.7",
+    "git-autoregister-odb": "^1.0.0",
+    "git-odb": "^1.0.0",
+    "git-to-js": "^2.0.0",
+    "git-odb-loose": "^1.0.0",
+    "ls-stream": "^1.0.0",
+    "git-load-refs": "^1.0.0",
+    "git-odb-pack": "^1.0.0",
     "through": "~2.2.7"
   },
   "devDependencies": {
-    "git-parse-human": "0.0.1",
-    "git-walk-tree": "0.0.1",
-    "git-walk-refs": "0.0.1"
+    "git-parse-human": "^1.0.0",
+    "git-walk-tree": "^1.0.0",
+    "git-walk-refs": "^1.0.0"
   }
 }
